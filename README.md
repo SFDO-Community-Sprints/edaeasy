@@ -7,7 +7,7 @@ EDAEASY
 * List of all Contributors: Jason Lantz, Kathy Lueckeman, Steph Sisson
 
 ### Project Vision (Your first task as a team)
-Our vision for this project is to make it easier for higher ed institutions to try out the EDA/EASY/Interactions Salesforce products. 
+Our vision for this project is to make it easier for higher ed institutions to try out the EDA/EASY/Interactions Salesforce products. The current process to install, configure and data load data takes a significant amount of manual work. This will automate the entire process in a scratch org, allowing for faster review and testing of existing functionality. 
 
 We will create a package using CumulusCI to spin up a scratch org that will:
 1. Contain EDA
