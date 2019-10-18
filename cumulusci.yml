@@ -1,0 +1,21 @@
+minimum_cumulusci_version: '3.0.2'
+project:
+    name: edaeasy
+    package:
+        name:  edaeasy
+        api_version: '46.0'
+    dependencies:
+        - github: 'https://github.com/SalesforceFoundation/EDA'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/edaeasy/tests
+            options:
+                outputdir: robot/edaeasy/results
+
+    robot_testdoc:
+        options:
+            path: robot/edaeasy/tests
+            output: robot/edaeasy/doc/edaeasy_tests.html
