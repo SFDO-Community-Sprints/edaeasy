@@ -20,3 +20,6 @@ tasks:
         options:
             path: robot/edaeasy/tests
             output: robot/edaeasy/doc/edaeasy_tests.html
+
+    extract_dataset:
+        class_path: tasks.bulkdata.ExtractData
