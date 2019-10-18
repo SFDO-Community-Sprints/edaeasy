@@ -318,8 +318,6 @@ Insert Opportunity:
       table: account
     CampaignId:
       table: campaign
-    ContactId:
-      table: contact
     Contact__c:
       table: contact
     Recruitment_Program__c:
