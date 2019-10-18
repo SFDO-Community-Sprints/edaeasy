@@ -23,3 +23,12 @@ tasks:
 
     extract_dataset:
         class_path: tasks.bulkdata.ExtractData
+
+    load_dataset:
+        class_path: tasks.bulkdata.LoadData
+
+flows:
+    config_qa:
+        steps:
+            3:
+                task: load_dataset

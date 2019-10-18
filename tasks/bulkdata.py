@@ -1,6 +1,9 @@
 import unicodecsv
 from cumulusci.tasks.bulkdata.extract import ExtractData as BaseExtractData
+from cumulusci.tasks.bulkdata.load import LoadData as BaseLoadData
 from cumulusci.tasks.bulkdata.utils import fields_for_mapping
+
+
 class ExtractData(BaseExtractData):
     def _soql_for_mapping(self, mapping):
         sf_object = mapping["sf_object"]
@@ -12,12 +15,10 @@ class ExtractData(BaseExtractData):
             **{"fields": ", ".join(fields), "sf_object": sf_object}
         )
         where = []
-        #import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         if "record_type" in mapping:
             where.append(
-                "RecordType.DeveloperName = '{}'".format(
-                    mapping["record_type"]
-                )
+                "RecordType.DeveloperName = '{}'".format(mapping["record_type"])
             )
         if "where" in mapping:
             where.extend(mapping["where"])
@@ -46,5 +47,9 @@ class ExtractData(BaseExtractData):
             if rows:
                 chunk_size = 10
                 for i in range(0, len(rows), chunk_size):
-                    conn.execute(table.insert().values(rows[i:i+chunk_size]))
+                    conn.execute(table.insert().values(rows[i : i + chunk_size]))
         self.session.flush()
+
+
+class LoadData(BaseLoadData):
+    _sql_bulk_insert_from_csv = ExtractData._sql_bulk_insert_from_csv

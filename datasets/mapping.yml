@@ -58,6 +58,7 @@ Insert Application_Review__c:
     Terminated__c: terminated__c
   lookups:
     Application__c:
+      after: Insert Application__c
       table: application__c
   sf_object: Application_Review__c
   table: application_review__c
@@ -85,8 +86,10 @@ Insert Application__c:
     Application_Control__c:
       table: application_control__c
     Contact__c:
+      after: Insert Contact
       table: contact
     Intended_Program__c:
+      after: Insert Program
       table: program__c
     Intended_Term_of_Entry__c:
       table: academic_term__c
@@ -103,18 +106,6 @@ Insert Campaign:
       table: campaign
   sf_object: Campaign
   table: campaign
-Insert CampaignMember:
-  fields:
-    Campaign_Member_Key__c: campaign_member_key__c
-  lookups:
-    CampaignId:
-      table: campaign
-    ContactId:
-      table: contact
-    LeadId:
-      table: lead
-  sf_object: CampaignMember
-  table: campaignmember
 Insert Contact:
   fields:
     Constituent_ID__c: constituent_id__c
@@ -173,6 +164,7 @@ Insert Contact:
     hed__Primary_Household__c:
       table: account
     hed__Primary_Language__c:
+      after: Insert hed__Language__c
       table: hed__language__c
     hed__Primary_Organization__c:
       table: account
@@ -262,6 +254,7 @@ Insert Interaction__c:
       table: contact
     Lead__c:
       table: lead
+      after: Insert Lead
     Opportunity__c:
       table: opportunity
     Recruitment_Program__c:
@@ -289,7 +282,6 @@ Insert Lead:
     Status: status
   lookups:
     Affiliated_Account__c:
-      after: Insert Account
       table: account
     Recruitment_Program__c:
       after: Insert Program__c
@@ -578,3 +570,17 @@ Insert hed__Language__c:
     Name: name
   sf_object: hed__Language__c
   table: hed__language__c
+Insert CampaignMember:
+  fields:
+    Campaign_Member_Key__c: campaign_member_key__c
+  lookups:
+    CampaignId:
+      table: campaign
+    ContactId:
+      after: Insert Contact
+      table: contact
+    LeadId:
+      table: lead
+      after: Insert Lead
+  sf_object: CampaignMember
+  table: campaignmember
