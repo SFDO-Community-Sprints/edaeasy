@@ -1,0 +1,580 @@
+Insert Academic_Term__c:
+  fields:
+    Activate_Application_Date__c: activate_application_date__c
+    End_Application_Date__c: end_application_date__c
+    Name: name
+    Term_End_Date__c: term_end_date__c
+    Term_Start_Date__c: term_start_date__c
+  sf_object: Academic_Term__c
+  table: academic_term__c
+Insert Account:
+  fields:
+    Name: name
+  lookups:
+    ParentId:
+      after: Insert Account
+      table: account
+    hed__Current_Address__c:
+      after: Insert hed__Address__c
+      table: hed__address__c
+    hed__Primary_Contact__c:
+      after: Insert Contact
+      table: contact
+  sf_object: Account
+  table: account
+Insert Application_Control__c:
+  fields:
+    Active__c: active__c
+    Allow_Cancel_From__c: allow_cancel_from__c
+    Allow_Submit_From__c: allow_submit_from__c
+    Allow_Withdraw_From__c: allow_withdraw_from__c
+    Application_Start_Status__c: application_start_status__c
+    Arrow_Color__c: arrow_color__c
+    Button_Color__c: button_color__c
+    Button_Text_Color__c: button_text_color__c
+    Cancel_Status__c: cancel_status__c
+    Default__c: default__c
+    Hide_Term_Program__c: hide_term_program__c
+    Line_Color__c: line_color__c
+    Link_Color__c: link_color__c
+    Logo_Static_Resource_Path__c: logo_static_resource_path__c
+    Logo_Static_Resource__c: logo_static_resource__c
+    Name: name
+    Submit_Status__c: submit_status__c
+    Text_Color__c: text_color__c
+    URL_Parameter__c: url_parameter__c
+    Withdraw_Status__c: withdraw_status__c
+  sf_object: Application_Control__c
+  table: application_control__c
+Insert Application_Review__c:
+  fields:
+    Completed__c: completed__c
+    Date_Completed__c: date_completed__c
+    Decision_Recommendation__c: decision_recommendation__c
+    Due_Date__c: due_date__c
+    Start_Date__c: start_date__c
+    Terminated__c: terminated__c
+  lookups:
+    Application__c:
+      table: application__c
+  sf_object: Application_Review__c
+  table: application_review__c
+Insert Application__c:
+  fields:
+    Admission_Decision__c: admission_decision__c
+    Applicant_Type__c: applicant_type__c
+    Application_Status__c: application_status__c
+    Citizenship__c: citizenship__c
+    Degree_Type__c: degree_type__c
+    Delivery_Location__c: delivery_location__c
+    Delivery_Type__c: delivery_type__c
+    Educational_Background__c: educational_background__c
+    Generic_Filter_1__c: generic_filter_1__c
+    Generic_Filter_2__c: generic_filter_2__c
+    Generic_Filter_3__c: generic_filter_3__c
+    Generic_Filter_4__c: generic_filter_4__c
+    Holding_Name__c: holding_name__c
+    Related_Object_JSON__c: related_object_json__c
+    Residency__c: residency__c
+    School_College__c: school_college__c
+    Student_Type__c: student_type__c
+    User_Created__c: user_created__c
+  lookups:
+    Application_Control__c:
+      table: application_control__c
+    Contact__c:
+      table: contact
+    Intended_Program__c:
+      table: program__c
+    Intended_Term_of_Entry__c:
+      table: academic_term__c
+  sf_object: Application__c
+  table: application__c
+Insert Campaign:
+  fields:
+    Campaign_Key__c: campaign_key__c
+    IsActive: isactive
+    Name: name
+  lookups:
+    ParentId:
+      after: Insert Campaign
+      table: campaign
+  sf_object: Campaign
+  table: campaign
+Insert CampaignMember:
+  fields:
+    Campaign_Member_Key__c: campaign_member_key__c
+  lookups:
+    CampaignId:
+      table: campaign
+    ContactId:
+      table: contact
+    LeadId:
+      table: lead
+  sf_object: CampaignMember
+  table: campaignmember
+Insert Contact:
+  fields:
+    Constituent_ID__c: constituent_id__c
+    DoNotCall: donotcall
+    FirstName: firstname
+    HasOptedOutOfEmail: hasoptedoutofemail
+    HasOptedOutOfFax: hasoptedoutoffax
+    LastName: lastname
+    hed__AlternateEmail__c: hed__alternateemail__c
+    hed__Chosen_Full_Name__c: hed__chosen_full_name__c
+    hed__Citizenship__c: hed__citizenship__c
+    hed__Country_of_Origin__c: hed__country_of_origin__c
+    hed__Deceased__c: hed__deceased__c
+    hed__Do_Not_Contact__c: hed__do_not_contact__c
+    hed__Dual_Citizenship__c: hed__dual_citizenship__c
+    hed__Ethnicity__c: hed__ethnicity__c
+    hed__Exclude_from_Household_Formal_Greeting__c: hed__exclude_from_household_formal_greeting__c
+    hed__Exclude_from_Household_Informal_Greeting__c: hed__exclude_from_household_informal_greeting__c
+    hed__Exclude_from_Household_Name__c: hed__exclude_from_household_name__c
+    hed__FERPA__c: hed__ferpa__c
+    hed__Financial_Aid_Applicant__c: hed__financial_aid_applicant__c
+    hed__Gender__c: hed__gender__c
+    hed__HIPAA_Detail__c: hed__hipaa_detail__c
+    hed__HIPAA__c: hed__hipaa__c
+    hed__Military_Background__c: hed__military_background__c
+    hed__Military_Service__c: hed__military_service__c
+    hed__Naming_Exclusions__c: hed__naming_exclusions__c
+    hed__PreferredPhone__c: hed__preferredphone__c
+    hed__Preferred_Email__c: hed__preferred_email__c
+    hed__Primary_Address_Type__c: hed__primary_address_type__c
+    hed__Race__c: hed__race__c
+    hed__Religion__c: hed__religion__c
+    hed__Secondary_Address_Type__c: hed__secondary_address_type__c
+    hed__Social_Security_Number__c: hed__social_security_number__c
+    hed__UniversityEmail__c: hed__universityemail__c
+    hed__WorkEmail__c: hed__workemail__c
+    hed__WorkPhone__c: hed__workphone__c
+    hed__is_Address_Override__c: hed__is_address_override__c
+  lookups:
+    AccountId:
+      table: account
+    Primary_Academic_Program__c:
+      table: account
+    Primary_Department__c:
+      table: account
+    Primary_Educational_Institution__c:
+      table: account
+    Primary_Sports_Organization__c:
+      table: account
+    ReportsToId:
+      after: Insert Contact
+      table: contact
+    hed__Current_Address__c:
+      after: Insert hed__Address__c
+      table: hed__address__c
+    hed__Primary_Household__c:
+      table: account
+    hed__Primary_Language__c:
+      table: hed__language__c
+    hed__Primary_Organization__c:
+      table: account
+  sf_object: Contact
+  table: contact
+Insert Intended_Program_Term__c:
+  fields:
+    Activate_Application_Date__c: activate_application_date__c
+    Applicant_Type__c: applicant_type__c
+    Citizenship__c: citizenship__c
+    Degree_Type__c: degree_type__c
+    Delivery_Type__c: delivery_type__c
+    End_Application_Date__c: end_application_date__c
+    Generic_Filter_1__c: generic_filter_1__c
+    Generic_Filter_2__c: generic_filter_2__c
+    Generic_Filter_3__c: generic_filter_3__c
+    Generic_Filter_4__c: generic_filter_4__c
+    Name: name
+    Period_Id__c: period_id__c
+    Residency__c: residency__c
+    School_College__c: school_college__c
+    Student_Type__c: student_type__c
+  lookups:
+    Academic_Term__c:
+      table: academic_term__c
+    Intended_Program__c:
+      table: program__c
+  sf_object: Intended_Program_Term__c
+  table: intended_program_term__c
+Insert Interaction_Mapping__c:
+  fields:
+    Active__c: active__c
+    Insert_Null__c: insert_null__c
+    Interaction_Source_Field_API_Name__c: interaction_source_field_api_name__c
+    Skip_Mapping__c: skip_mapping__c
+    Target_Field_API_Name__c: target_field_api_name__c
+    Target_Object_API_Name__c: target_object_api_name__c
+  sf_object: Interaction_Mapping__c
+  table: interaction_mapping__c
+Insert Interaction__c:
+  fields:
+    Additional_Campaign_Member_Status__c: additional_campaign_member_status__c
+    Additional_Campaign_Reference_ID__c: additional_campaign_reference_id__c
+    Admit_Type__c: admit_type__c
+    Affiliation_Role__c: affiliation_role__c
+    Affiliation_Status__c: affiliation_status__c
+    Application_Number__c: application_number__c
+    Audit_Reason__c: audit_reason__c
+    Birthdate__c: birthdate__c
+    Campaign_Member_Status__c: campaign_member_status__c
+    Campaign_Reference_ID__c: campaign_reference_id__c
+    Constituent_ID__c: constituent_id__c
+    Contact_Title__c: contact_title__c
+    Email__c: email__c
+    Ethnicity__c: ethnicity__c
+    First_Name__c: first_name__c
+    Gender__c: gender__c
+    Home_Phone__c: home_phone__c
+    Interaction_Source__c: interaction_source__c
+    Interaction_Status__c: interaction_status__c
+    Interaction_Upsert_Key__c: interaction_upsert_key__c
+    Last_Name__c: last_name__c
+    Lead_Only__c: lead_only__c
+    Lead_Source__c: lead_source__c
+    Mailing_City__c: mailing_city__c
+    Mailing_Country__c: mailing_country__c
+    Mailing_Postal_Code__c: mailing_postal_code__c
+    Mailing_State__c: mailing_state__c
+    Mailing_Street__c: mailing_street__c
+    Middle_Name__c: middle_name__c
+    Mobile_Phone__c: mobile_phone__c
+    Opportunity_Stage__c: opportunity_stage__c
+    Primary_Affiliation__c: primary_affiliation__c
+    Race__c: race__c
+    Salutation__c: salutation__c
+    University_Email__c: university_email__c
+  lookups:
+    Academic_Program__c:
+      table: program__c
+    Additional_Campaign__c:
+      table: campaign
+    Affiliated_Account__c:
+      table: account
+    Campaign__c:
+      table: campaign
+    Contact__c:
+      table: contact
+    Lead__c:
+      table: lead
+    Opportunity__c:
+      table: opportunity
+    Recruitment_Program__c:
+      table: program__c
+  sf_object: Interaction__c
+  table: interaction__c
+Insert Lead:
+  fields:
+    Admit_Type__c: admit_type__c
+    Affiliation_Role__c: affiliation_role__c
+    Birthdate__c: birthdate__c
+    Company: company
+    Constituent_ID__c: constituent_id__c
+    DoNotCall: donotcall
+    Ethnicity__c: ethnicity__c
+    FirstName: firstname
+    Gender__c: gender__c
+    HasOptedOutOfEmail: hasoptedoutofemail
+    HasOptedOutOfFax: hasoptedoutoffax
+    IsConverted: isconverted
+    IsUnreadByOwner: isunreadbyowner
+    LastName: lastname
+    Primary_Affiliation__c: primary_affiliation__c
+    Race__c: race__c
+    Status: status
+  lookups:
+    Affiliated_Account__c:
+      after: Insert Account
+      table: account
+    Recruitment_Program__c:
+      after: Insert Program__c
+      table: program__c
+  sf_object: Lead
+  table: lead
+Insert Opportunity:
+  fields:
+    Admit_Type__c: admit_type__c
+    Application_Number__c: application_number__c
+    Application_Submitted_Date__c: application_submitted_date__c
+    CloseDate: closedate
+    First_Inquiry_Source__c: first_inquiry_source__c
+    First_Recruitment_Program__c: first_recruitment_program__c
+    Inquiry_Date__c: inquiry_date__c
+    IsPrivate: isprivate
+    Name: name
+    Opportunity_Key__c: opportunity_key__c
+    StageName: stagename
+  lookups:
+    Academic_Program__c:
+      table: program__c
+    AccountId:
+      table: account
+    Affiliated_Account__c:
+      table: account
+    CampaignId:
+      table: campaign
+    ContactId:
+      table: contact
+    Contact__c:
+      table: contact
+    Recruitment_Program__c:
+      table: program__c
+  sf_object: Opportunity
+  table: opportunity
+Insert Program__c:
+  fields:
+    Academic_Level__c: academic_level__c
+    Active__c: active__c
+    Applicant_Type__c: applicant_type__c
+    CIP_Code__c: cip_code__c
+    Career__c: career__c
+    Citizenship__c: citizenship__c
+    Degree_Type__c: degree_type__c
+    Degree__c: degree__c
+    Delivery_Type__c: delivery_type__c
+    Description__c: description__c
+    Generic_Filter_1__c: generic_filter_1__c
+    Generic_Filter_2__c: generic_filter_2__c
+    Generic_Filter_3__c: generic_filter_3__c
+    Generic_Filter_4__c: generic_filter_4__c
+    Hide_Applicant_Type__c: hide_applicant_type__c
+    Hide_Citizenship__c: hide_citizenship__c
+    Hide_Student_Type__c: hide_student_type__c
+    Hide_from_Application__c: hide_from_application__c
+    Name: name
+    Number_of_Applications_Limit__c: number_of_applications_limit__c
+    Program_Code__c: program_code__c
+    Program_Name_on_Application__c: program_name_on_application__c
+    Program_Record_Type__c: program_record_type__c
+    Program_Type__c: program_type__c
+    Residency__c: residency__c
+    School_College__c: school_college__c
+    Student_Type__c: student_type__c
+  lookups:
+    Department__c:
+      table: account
+    Recruitment_Program__c:
+      after: Insert Program__c
+      table: program__c
+  sf_object: Program__c
+  table: program__c
+Insert Question_Dependency__c:
+  fields:
+    ValueCheckbox__c: valuecheckbox__c
+    Value__c: value__c
+  lookups:
+    Controlling_Question__c:
+      table: question__c
+    Question__c:
+      table: question__c
+  sf_object: Question_Dependency__c
+  table: question_dependency__c
+Insert Question_Response__c:
+  fields:
+    City__c: city__c
+    Country__c: country__c
+    IsPopulated__c: ispopulated__c
+    IsRequired__c: isrequired__c
+    IsShown__c: isshown__c
+    PopulatedOn__c: populatedon__c
+    PostalCode__c: postalcode__c
+    State__c: state__c
+    Street__c: street__c
+    ValueCheckbox__c: valuecheckbox__c
+    ValueCurrency__c: valuecurrency__c
+    ValueDateTime__c: valuedatetime__c
+    ValueDate__c: valuedate__c
+    ValueEmail__c: valueemail__c
+    ValueLongTextArea__c: valuelongtextarea__c
+    ValueNumber__c: valuenumber__c
+    ValuePercent__c: valuepercent__c
+    ValuePhone__c: valuephone__c
+    ValueTextArea__c: valuetextarea__c
+    ValueTextEncrypted__c: valuetextencrypted__c
+    ValueText__c: valuetext__c
+    ValueURL__c: valueurl__c
+  lookups:
+    Question__c:
+      table: question__c
+    Requirement_Response__c:
+      table: requirement_response__c
+  sf_object: Question_Response__c
+  table: question_response__c
+Insert Question__c:
+  fields:
+    Active__c: active__c
+    Applicant_Type__c: applicant_type__c
+    Application_Field__c: application_field__c
+    Application_Status__c: application_status__c
+    Citizenship__c: citizenship__c
+    Contact_Field__c: contact_field__c
+    Degree_Type__c: degree_type__c
+    Delivery_Type__c: delivery_type__c
+    Dependency_Behavior__c: dependency_behavior__c
+    Dependency_Logic__c: dependency_logic__c
+    Display_Order__c: display_order__c
+    Display_as_Picklist__c: display_as_picklist__c
+    Display_on_Admin_Review_Pages__c: display_on_admin_review_pages__c
+    Editable_Application_Status__c: editable_application_status__c
+    External_Email_Field__c: external_email_field__c
+    Generic_Filter_1__c: generic_filter_1__c
+    Generic_Filter_2__c: generic_filter_2__c
+    Generic_Filter_3__c: generic_filter_3__c
+    Generic_Filter_4__c: generic_filter_4__c
+    Hardcoded_Value__c: hardcoded_value__c
+    Help_Text__c: help_text__c
+    Label__c: label__c
+    Length__c: length__c
+    Lookup_Object__c: lookup_object__c
+    Lookup_Where_Clause__c: lookup_where_clause__c
+    Name: name
+    Name_Field_API_Name__c: name_field_api_name__c
+    New_Reference_Field__c: new_reference_field__c
+    Picklist_Values__c: picklist_values__c
+    Placeholder__c: placeholder__c
+    Related_Object_Field__c: related_object_field__c
+    Required__c: required__c
+    Residency__c: residency__c
+    School_College__c: school_college__c
+    Static_Text__c: static_text__c
+    Student_Type__c: student_type__c
+    URL_Parameter__c: url_parameter__c
+  lookups:
+    Intended_Program__c:
+      table: program__c
+    Requirement_Item__c:
+      table: requirement_item__c
+  sf_object: Question__c
+  table: question__c
+Insert Requirement_Item__c:
+  fields:
+    Active__c: active__c
+    Allow_Supporting_Documentation_Upload__c: allow_supporting_documentation_upload__c
+    Allow_Text_Entry__c: allow_text_entry__c
+    Applicant_Type__c: applicant_type__c
+    Application_Status__c: application_status__c
+    Citizenship__c: citizenship__c
+    Degree_Type__c: degree_type__c
+    Delivery_Type__c: delivery_type__c
+    Display_Order__c: display_order__c
+    Display_on_Admin_Review_Pages__c: display_on_admin_review_pages__c
+    Display_on_Checklist__c: display_on_checklist__c
+    Editable_Application_Status__c: editable_application_status__c
+    File_Types__c: file_types__c
+    Generic_Filter_1__c: generic_filter_1__c
+    Generic_Filter_2__c: generic_filter_2__c
+    Generic_Filter_3__c: generic_filter_3__c
+    Generic_Filter_4__c: generic_filter_4__c
+    Holding_Record_Id__c: holding_record_id__c
+    Instructions__c: instructions__c
+    Internal_Only_Applicant_Instructions__c: internal_only_applicant_instructions__c
+    Internal_Only_Show_on_Checklist__c: internal_only_show_on_checklist__c
+    Internal_Only__c: internal_only__c
+    Label__c: label__c
+    Maximum_Number_of_Children__c: maximum_number_of_children__c
+    Name: name
+    Related_List_Object_Master_Field__c: related_list_object_master_field__c
+    Related_List_Object_Master__c: related_list_object_master__c
+    Related_List_Object__c: related_list_object__c
+    Related_List_Where_Clause__c: related_list_where_clause__c
+    Required_Number_of_Children__c: required_number_of_children__c
+    Required_Supporting_Documentation__c: required_supporting_documentation__c
+    Required__c: required__c
+    Residency__c: residency__c
+    School_College__c: school_college__c
+    Student_Type__c: student_type__c
+    Viewing_Requirement__c: viewing_requirement__c
+  lookups:
+    Intended_Program__c:
+      table: program__c
+    Internal_Requirement_Item__c:
+      after: Insert Requirement_Item__c
+      table: requirement_item__c
+    Requirement__c:
+      table: requirement__c
+  sf_object: Requirement_Item__c
+  table: requirement_item__c
+Insert Requirement_Response__c:
+  fields:
+    Archive_Payload__c: archive_payload__c
+    Child_Requirement_Fulfilled_On__c: child_requirement_fulfilled_on__c
+    Document_Requirement_Fulfilled_On__c: document_requirement_fulfilled_on__c
+    External_Email__c: external_email__c
+    HasDocument__c: hasdocument__c
+    Has_Child_Requirement__c: has_child_requirement__c
+    Hashcode__c: hashcode__c
+    Send_Reminder__c: send_reminder__c
+    ValueTextEntry__c: valuetextentry__c
+    Viewed__c: viewed__c
+  lookups:
+    Application__c:
+      table: application__c
+    Requirement_Item__c:
+      table: requirement_item__c
+  sf_object: Requirement_Response__c
+  table: requirement_response__c
+Insert Requirement__c:
+  fields:
+    Active__c: active__c
+    Applicant_Type__c: applicant_type__c
+    Application_Creation_Display_Order__c: application_creation_display_order__c
+    Application_Status__c: application_status__c
+    Citizenship__c: citizenship__c
+    Degree_Type__c: degree_type__c
+    Delivery_Type__c: delivery_type__c
+    Display_Order__c: display_order__c
+    Display_on_Admin_Review_Pages__c: display_on_admin_review_pages__c
+    Display_on_Checklist__c: display_on_checklist__c
+    Generic_Filter_1__c: generic_filter_1__c
+    Generic_Filter_2__c: generic_filter_2__c
+    Generic_Filter_3__c: generic_filter_3__c
+    Generic_Filter_4__c: generic_filter_4__c
+    Internal_Only_Show_on_Checklist__c: internal_only_show_on_checklist__c
+    Internal_Only__c: internal_only__c
+    Label__c: label__c
+    Name: name
+    Residency__c: residency__c
+    School_College__c: school_college__c
+    Show_on_Application_Creation__c: show_on_application_creation__c
+    Student_Type__c: student_type__c
+    Viewing_Requirement__c: viewing_requirement__c
+  lookups:
+    Application_Control__c:
+      table: application_control__c
+    Intended_Program__c:
+      table: program__c
+  sf_object: Requirement__c
+  table: requirement__c
+Insert hed__Address__c:
+  fields:
+    hed__Address_Type__c: hed__address_type__c
+    hed__Default_Address__c: hed__default_address__c
+    hed__Latest_End_Date__c: hed__latest_end_date__c
+    hed__Latest_Start_Date__c: hed__latest_start_date__c
+    hed__MailingCity__c: hed__mailingcity__c
+    hed__MailingCountry__c: hed__mailingcountry__c
+    hed__MailingPostalCode__c: hed__mailingpostalcode__c
+    hed__MailingState__c: hed__mailingstate__c
+    hed__MailingStreet2__c: hed__mailingstreet2__c
+    hed__MailingStreet__c: hed__mailingstreet__c
+    hed__Seasonal_End_Day__c: hed__seasonal_end_day__c
+    hed__Seasonal_End_Month__c: hed__seasonal_end_month__c
+    hed__Seasonal_End_Year__c: hed__seasonal_end_year__c
+    hed__Seasonal_Start_Day__c: hed__seasonal_start_day__c
+    hed__Seasonal_Start_Month__c: hed__seasonal_start_month__c
+    hed__Seasonal_Start_Year__c: hed__seasonal_start_year__c
+  lookups:
+    hed__Parent_Account__c:
+      table: account
+    hed__Parent_Contact__c:
+      table: contact
+  sf_object: hed__Address__c
+  table: hed__address__c
+Insert hed__Language__c:
+  fields:
+    Name: name
+  sf_object: hed__Language__c
+  table: hed__language__c
